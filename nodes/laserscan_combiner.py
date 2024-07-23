@@ -30,7 +30,7 @@ class LaserscanPointcloudCombiner():
         self.pub_rate = rospy.get_param('~pub_rate', kwargs.get('pub_rate', 20))     # 20 Hz
         self.pointcloud_topic_name = rospy.get_param('~pointcloud_topic_name', kwargs.get('pointcloud_topic_name', None)) # '/velodyne_points'
         self.laserscan_out_topic_name = rospy.get_param('~laserscan_out_topic_name', kwargs.get('laserscan_out_topic_name', '/laser_link/scan'))
-        self.laser_frame_id = rospy.get_param('~laser_frame_id', kwargs.get('laser_frame_id', 'velodyne'))
+        self.laser_frame_id = rospy.get_param('~laser_frame_id', kwargs.get('laser_frame_id', 'combined_laser'))
         self.laserscan_in_1_topic_name = rospy.get_param('~laserscan_in_1_topic_name', kwargs.get('laserscan_in_1_topic_name', None))
         self.laserscan_in_2_topic_name = rospy.get_param('~laserscan_in_2_topic_name', kwargs.get('laserscan_in_2_topic_name', None))        
         # resolve the use of in_2 instead of in_1 by copying the in_2 topic to in_1 topic
