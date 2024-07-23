@@ -1,0 +1,18 @@
+<launch>
+    <node name="laserscan_combiner" pkg="mgv_laserscan_combiner" type="laserscan_combiner.py" respawn="false" output="screen">
+        <param name="pointcloud_topic_name" value="/velodyne_points"/>
+        <param name="laserscan_in_1_topic_name" value="/bound_detector/scan"/>
+        <!-- the package supports at most 2 laserscan input and 1 pointcloud input -->
+        <!-- <param name="laserscan_in_2_topic_name" value="/another_detector/scan"/> -->
+        <param name="laserscan_out_topic_name" value="/laser_link/scan"/>
+        <param name="laser_samples" value="240" />     
+        <!-- <param name="laser_frame_id" value="velodyne" />     
+        <param name="laser_min_angle" value="-3.14" />     
+        <param name="laser_max_angle" value="3.14" />     
+        <param name="laser_range_min" value="1" />     
+        <param name="laser_range_max" value="10" />  
+        <param name="pointcloud_min_z" value="-0.2" />     
+        <param name="pointcloud_max_z" value="10.0" />      
+        <param name="pub_rate" value="10" />      -->
+    </node>
+</launch>
